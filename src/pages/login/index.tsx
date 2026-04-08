@@ -8,6 +8,7 @@ import { themes } from "../../global/themes";
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isPasswordSecure, setIsPasswordSecure] = useState(true);
     const [loading, setLoading] = useState(false);
 
     async function getLogin() {
@@ -55,12 +56,15 @@ export default function Login() {
                         placeholder="Insira sua senha"
                         value={password}
                         onChangeText={setPassword}
+                        secureTextEntry={isPasswordSecure}
                     />
-                    <MaterialIcons 
-                        name="visibility"
-                        size={20}
-                        color={themes.colors.gray}
-                    />
+                    <TouchableOpacity onPress={() => setIsPasswordSecure(!isPasswordSecure)}>
+                        <MaterialIcons 
+                            name={isPasswordSecure ? 'visibility' : 'visibility-off'}
+                            size={20}
+                            color={themes.colors.gray}
+                        />
+                    </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
                     {

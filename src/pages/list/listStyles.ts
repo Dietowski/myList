@@ -12,7 +12,6 @@ export const style = StyleSheet.create({
         justifyContent: 'space-between',
         paddingTop: 32,
         paddingHorizontal: 10,
-        alignItems: 'center'
     },
     textRowInitial: {
         fontWeight: 'bold',
@@ -41,11 +40,4 @@ export const style = StyleSheet.create({
         gap: 5,
         paddingHorizontal: 10,
     },
-    containerLivros: {
-        backgroundColor: themes.colors.lightGray,
-        borderRadius: 15,
-        height: 165,
-        width: 340,
-        alignSelf: 'center',
-    }
 });
