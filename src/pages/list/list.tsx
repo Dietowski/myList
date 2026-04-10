@@ -5,8 +5,11 @@ import { style } from './listStyles';
 import Header from '../../components/header/header'
 import Search from '../../components/search/search'
 import CardBook from '../../components/card-book/cardBook';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Lists() {
+
+    const navigation = useNavigation();
 
     return (
         <View style={style.container}>
@@ -18,7 +21,7 @@ export default function Lists() {
             <View>  {/* ROW CATEGORIA 1 */}
                 <View style={style.rowCategoriaNome}>
                     <Text style={{ fontSize: 24 }}>Matemática</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Result')}>
                         <MaterialIcons
                             name='arrow-forward-ios'
                             size={16}

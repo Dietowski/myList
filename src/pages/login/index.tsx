@@ -4,8 +4,11 @@ import { View, Text, Image, TextInput, TouchableOpacity, Alert, ActivityIndicato
 import Logo from '../../assets/images/logo.png'
 import {MaterialIcons} from '@expo/vector-icons';
 import { themes } from "../../global/themes";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
+    const navigation = useNavigation();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isPasswordSecure, setIsPasswordSecure] = useState(true);
@@ -66,7 +69,8 @@ export default function Login() {
                         />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={style.button} onPress={()=>getLogin()}>
+                <TouchableOpacity style={style.button} onPress={()=>
+                    navigation.navigate('Lists')}>
                     {
                         loading?
                             <ActivityIndicator color={themes.colors.primary} size={'small'} />
