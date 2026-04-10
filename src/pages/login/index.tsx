@@ -26,6 +26,7 @@ export default function Login() {
             setTimeout(()=> {
                 Alert.alert('Parabéns', 'Logado com sucesso');
                 setLoading(false);
+                navigation.navigate('Lists');
             }, 3000);
         } catch (error) {
             console.log(error);
@@ -69,8 +70,7 @@ export default function Login() {
                         />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={style.button} onPress={()=>
-                    navigation.navigate('Lists')}>
+                <TouchableOpacity style={style.button} onPress={()=> getLogin()}>
                     {
                         loading?
                             <ActivityIndicator color={themes.colors.primary} size={'small'} />
